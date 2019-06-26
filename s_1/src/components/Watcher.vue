@@ -20,6 +20,7 @@
                 <li v-for="(m, i) in music" :key="i">$ {{ m.id }}</li>
             </ul>
         </div>
+
     </div>
 </template>
 
@@ -41,7 +42,7 @@
         methods: {
             getMoney() {
                 this.music = [];
-                for (let i = 0; i < 10; i++) {
+                for (let i = 0; i < 5; i++) {
                     this.music.push(
                         {id: Math.round(parseInt(Math.random() * 100000)).toString()}
                     );
