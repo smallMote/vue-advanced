@@ -10,17 +10,48 @@ import TestRouter from './components/TestRouter'
 import TestAutoLoad from './components/global/TestAutoLoad'
 import RouterChildA from './components/RouterChildA'
 import RouterChildB from './components/RouterChildB'
+import Tsn from './components/Tsn'
+import TsnA from './components/tr/TsnA'
+import TsnB from './components/tr/TsnB'
+import UserMyselfCom from './components/UseMyselfCom'
 let routes = [
+  //Myself component
+  {
+    path: '/myCom',
+    name: 'myCom',
+    component: UserMyselfCom
+  },
+  //watcher
+  {
+    path: '/tsn',
+    name: 'Tsn',
+    component: Tsn,
+    redirect: '/tsn/tsn_a',
+    children: [
+      {
+        path: '/tsn/tsn_a',
+        name: 'tsn-a',
+        component: TsnA
+      },
+      {
+        path: '/tsn/tsn_b',
+        name: 'tsn-b',
+        component: TsnB
+      },
+    ]
+  },
   {
     path: '/watcher',
     name: 'watcher',
     component: Watcher
   },
+  //auto loading componet
   {
     path: 't-aotu-loading',
     name: 'tal',
     component: TestAutoLoad
   },
+  //router's test router
   {
     path: '/r-test',
     component: TestRouter,
@@ -36,7 +67,8 @@ let routes = [
         component: RouterChildB
       },
     ]
-  }
+  },
+  
 ];
 let router = new VueRouter({
   routes
