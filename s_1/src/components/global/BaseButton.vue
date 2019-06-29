@@ -18,7 +18,6 @@
     border-radius: 6px;
     cursor: pointer;
     background: none;
-    line-height: 35px;
     text-align: center;
     padding: 5px 15px;
     display: inline-block;

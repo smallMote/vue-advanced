@@ -8,9 +8,9 @@ export default {
 </script>
 
 <style>
-.title {
+h3 {
     height: 30vh;
-    background: seagreen;
+    background: linear-gradient(left, orange, seagreen);
     display: flex;
     justify-content: center;
     align-items: center;

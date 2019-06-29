@@ -9,7 +9,7 @@ export default {
 <style scoped>
 h3 {
     height: 30vh;
-    background: orange;
+    background: linear-gradient(left, seagreen, orange);
     display: flex;
     justify-content: center;
     align-items: center;

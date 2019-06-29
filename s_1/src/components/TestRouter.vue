@@ -5,7 +5,10 @@
             <BaseButton content="页面B" @click.native="$router.push('/r-test/r-childB')"></BaseButton>
         </section>
         <section>
-            <router-view :key="$router.fullPath"></router-view>
+            <transition name="fade" mode="out-in">
+                <router-view :key="$router.fullPath"></router-view>
+            </transition>
+            
         </section>
     </div>
 </template>

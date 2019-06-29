@@ -2,8 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import './components/global'
 import VueRouter from 'vue-router'
+import tween from './plugins/tween'
 Vue.config.productionTip = false
 Vue.use(VueRouter)
+Vue.use(tween)
 
 import Watcher from './components/Watcher'
 import TestRouter from './components/TestRouter'
@@ -14,6 +16,7 @@ import Tsn from './components/Tsn'
 import TsnA from './components/tr/TsnA'
 import TsnB from './components/tr/TsnB'
 import UserMyselfCom from './components/UseMyselfCom'
+import TsnNumber from './components/tr/TsnNumber'
 let routes = [
   //Myself component
   {
@@ -21,7 +24,7 @@ let routes = [
     name: 'myCom',
     component: UserMyselfCom
   },
-  //watcher
+  //过渡动画
   {
     path: '/tsn',
     name: 'Tsn',
@@ -38,8 +41,14 @@ let routes = [
         name: 'tsn-b',
         component: TsnB
       },
+      {
+        path: '/tsn-number',
+        name: 'tsn-number',
+        component: TsnNumber
+      },
     ]
   },
+  //侦听器
   {
     path: '/watcher',
     name: 'watcher',
@@ -47,7 +56,7 @@ let routes = [
   },
   //auto loading componet
   {
-    path: 't-aotu-loading',
+    path: '/tal',
     name: 'tal',
     component: TestAutoLoad
   },
